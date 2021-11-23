@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% set active_page = "Home" %} {% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}" />
+<div style="margin-top: 30px; text-align: center">
+  <h1>MELBOURNE HOUSING PRICE PREDICTION</h1>
+  <p class="lead"><i>You are welcome to simulate your futur home price with us </i></p>
+</div>
+<link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}" />
+<link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}" />
+<div class="home">
+    <div class="card">
+        <div>
+            <h2><i>Group - 5</i></h2>
+            <h3><u>TEAM MEMBERS:</u> </h3>
+            <h3><i>KC</i></h3>
+            <h3><i>Yawavi koudjonou</i></h3>
+            <h3><i> Marcuis Clark</i></h3>
+            <h3><i>Darry II</i></h3>
+            </p>
+        </div>
+    </div>
+</div>
+<script src="{{url_for('static', filename='js/home.js')}}"></script>
+{% endblock %}
