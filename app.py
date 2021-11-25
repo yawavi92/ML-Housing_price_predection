@@ -1,28 +1,31 @@
-from flask import Flask, render_template
+#import libraries
+import numpy as np
+from flask import Flask, request, jsonify, render_template
+import pickle
 
+#Initialize the flask App
 app = Flask(__name__)
+model = pickle.load(open('model.pkl', 'rb'))
 
+#default page of our web-app
 @app.route('/')
-@app.route('/home')
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
+
+#To use the predict button in our web-app
+@app.route('/predict',methods=['POST'])
+def predict():
+    '''
+    For rendering results on HTML GUI
+    '''
+    int_features = [float(x) for x in request.form.values()]
+    final_features = [np.array(int_features)]
+    prediction = model.predict(final_features)
+
+    output = round(prediction[0], 2)
+
+    return render_template('index.html', prediction_text='The estimate price is :{}'.format(output))
 
 
-@app.route('/simulation')
-def about():
-    return render_template('simulation.html')
-
-
-
-@app.errorhandler(404)
-def page_not_found(error):
-    return render_template('404.html'), 404
-
-
-if __name__ == '__main__':
-
-    # Run this when running on LOCAL server...
+if __name__ == "__main__":
     app.run(debug=True)
-
-    # ...OR run this when PRODUCTION server.
-    # app.run(debug=False)
