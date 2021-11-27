@@ -169,7 +169,6 @@ melbourne_df.hist(figsize=(15, 10))
 plt.show()
 
 
-
 ### countplot
 
 # Plot Bathroom
@@ -231,7 +230,7 @@ y = housing_df['price']
 X
 
 #X.columns
-X = pd.get_dummies(X)
+X = pd.get_dummies(X, drop_first=True)
 X
 
 # split data
