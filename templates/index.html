@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html>
-  <!--From https://codepen.io/frytyler/pen/EGdtg-->
-  <head>
-    <meta charset="UTF-8" />
-    <title>Housing Price Predictor</title>
+<head>
+<meta charset="UTF-8" />
     <link
       href="https://fonts.googleapis.com/css?family=Pacifico"
       rel="stylesheet"
@@ -32,225 +29,135 @@
     ></script>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Sofia|Urbanist|Bangers|Patrick+Hand&display=swap"
-    />
+      href="https://fonts.googleapis.com/css?family=Sofia|Urbanist|Bangers|Patrick+Hand&display=swap">
+      
+  <style>
+    form {
+      margin: auto;
+      background-color: darkslateblue;
+    }
+    @keyframes example {
+      0% {
+        background-color: black;
+      }
+      25% {
+        background-color: darkslateblue;
+      }
+      50% {
+        background-color: deepskyblue;
+      }
+      100% {
+        background-color: black;
+      }
+    }
+    .result {
+      text-align: center;
+      color: white;
+      background-color: black;
+      font-family: "Times New Roman", Times, serif;
+    }
+    .header {
+      padding: 10px;
+      text-align: center;
+      color: white;
+      background-color: black;
+      font-family: "Times New Roman", Times, serif;
+      animation-name: example;
+      animation-duration: 15s;
+      animation-iteration-count: 100;
+    }
+
+    label {
+      color: aliceblue;
+      font-size: 20px;
+    }
+
+    input {
+      border-radius: 10px;
+      width: 200px;
+      height: 25px;
+    }
+  </style>
+   
+  
+    <form action="{{ url_for('main') }}" method="POST">
+    <title>House Prediction Website</title>
   </head>
-</html>
 
-<body style="background-color:whitesmoke;text-align:center">
-<div class="row" style='width:100%; font-size:20px; background:#4169E1;'>Welcome</div>
-    <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}" method="post">
-      <!--fieldset style="float: left; height: 390px"-->
-       
-    <br>
-    <br/>
-    <div class="login">
-    <div style='margin-top: 10px; text-align: center;'>
-      <h1 class="display-1 text-center">Housing Price Estimator</h1>
-      <h4>Fill out the following cells to predict your future house price. If not applicable enter 0. <br>
-      For example if location  that interested is Eastern Metropolitan fill it's cell with 1, enter 0 for others location </h4>
-      <br>
-    <br>
-</body>
-			
+<body>
+  <div class="header">
+    <h2>House Prices Prediction</h2>
+  </div>
 
-    <div style="float:left; margin-right: 1.5em;">
-	<label for="Rooms"> Rooms</label><br>
-    <select name="Rooms" id="number" required>
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="1">6</option>
-              <option value="2">7</option>
-              </select>
-        </div>
-    <div style="float:left; margin-right: 1.5em;">
-	<label for="bathroom">Bathroom</label><br>
-        <select name="batroom" id="number" required>
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </div>
+    <br /><br />
+    <label
+      >Rooms
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;
+    </label>
+    <input name="rooms" type="number" required step="1" min="1" max="7" />
+    <br /><br />
 
-    <div style="float:left; margin-right: 1.5em;">
-	<label for="car">car spot</label><br>
-    <select name="car" id="number" required>
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </div>
-     </div>
-        <div style="float:left; margin-right: 1.5em;">
-		<label for="distance"> Distance from CBD in Km</label><br>
-        <input
-          type="number"
-          name="distance"
-          placeholder=""
-          required  step="0.1" min="0" max="25"/>
-          </div>
+    <label
+      >Bathroom
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </label>
+    <input name="bathroom" type="number" required step="1" min="1" max="7" />
+    <br /><br />
+
+    <label
+      >Distance &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+    >
+    <input name="distance " type="number" required step="0.1" min="0" max="30" />
+    <br /><br />
+
+
+    <label
+      >Car spot
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </label>
+    <input name="car" type="number" required step="1" min="0" max="5"  />
+    <br /><br />
     </div>
     <div style="float:left; margin-right: 1.5em;">
 	<label for="car">Type of housing</label><br>
-    <select name="type of housing" id="text" required>
-              <option value="House">House</option>
-              <option value="Townhouse">Townhouse</option>
-              <option value="Unit or Duplex">Unit or Duplex</option>
+    <select name="Type of housing" id="text" required>
+              <option value="0">House</option>
+              <option value="1">Townhouse</option>
+              <option value="2">Unit or Duplex</option>
             </select>
-         </div>
-          </div>
-    <!--div style="float:left; margin-right: 1.5em;">
-	<label for="type_h">House</label><br>
-    <input
-        type="number"
-        name="type_h"
-        placeholder=" "
-        required min="0" max="1"/>
-    </div>
-
-    <div style="float:left; margin-right: 1.5em;">
-    <label for="type_t">Townhouse</label><br>
-    <input
-        type="number"
-        name="type_t"
-        placeholder=" "
-        required min="0" max="1"/>
-    </div>
-
-    <div style="float:left; margin-right: 1.5em;">
-	<label for="type_u">Unit or Duplex</label><br>
-        <input
-          type="number"
-          name="type_u"
-          placeholder=" "
-          required min="0" max="1"/-->
+        <br />
         </div>
-          <!--/div>
+        <div style="float:left; margin-right: 1.5em;">
         <label for="Region">Region</label><br>
-    <select name="Region" id="text" required>
-              <option value="S Metropolitan">S Metropolitan</option>
-              <option value="region_Eastern Metropolitan">E Metropolitan</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select-->
-        </div>
-        <div style="float:left; margin-right: 1.5em;">
-		<label for="region_Southern Metropolitan">S Metropolitan</label><br>
-        <input
-          type="number"
-          name="region_Southern Metropolitan"
-          placeholder=" "
-          required min="0" max="1"/>
+        <select name="Region" id="text" required>
+              <option value="0">E Metropolitan</option>
+              <option value="1">E Victoria</option>
+              <option value="2">N Metropolitan</option>
+              <option value="3">N Victoria</option>
+              <option value="4">S-E Metropolitan</option>
+              <option value="5">S Metropolitan</option>
+              <option value="6">W Metropolitan</option>
+              <option value="7">W Victoria</option>
+            </select>
         </div>
 
-        <div style="float:left; margin-right: 1.5em;">
-		<label for="region_Eastern Metropolitan">E Metropolitan</label><br>
-        <input
-          type="number"
-          name="region_Eastern Metropolitan"
-          placeholder=" "
-          required min="0" max="1"/>
-        </div>
-
-        <div style="float:left; margin-right: 1.5em;">
-		<label for="region_Eastern Victoria">E Victoria</label><br>
-        <input
-          type="number"
-          name="region_Eastern Victoria"
-          placeholder=" "
-          required min="0" max="1"/><br>
-        </div>
-        </div>
-        </div>
-        <div style="float:left; margin-right: 1.5em;">
-		<label for="region_Northern Metropolitan">N Metropolitan</label><br>
-        <input
-         type="number"
-          name="region_Northern Metropolitan"
-          placeholder=" "
-          required min="0" max="1"/>
-        </div>
-
-        <div style="float:left; margin-right: 1.5em;">
-		<label for="region_Northern Victoria">N Victoria</label><br>
-        <input
-          type="number"
-          name="region_Northern Victoria"
-          placeholder=" "
-          required min="0" max="1"/>
-        </div>
-
-        <div style="float:left; margin-right: 1.5em;">
-		<label for="region_South-Eastern Metropolitan">S-E Metropolitan</label><br>
-        <input
-          type="number"
-          name="region_South-Eastern Metropolitan"
-          placeholder=" "
-          required min="0" max="1"/>
-        </div>
-
-        <div style="float:left; margin-right: 1.5em;">
-		<label for="region_Western Metropolitan">W Metropolitan</label><br>
-        <input
-          type="number"
-          name="region_Western Metropolitan"
-          placeholder=" "
-          required min="0" max="1"/>
-          </div>
-
-        <div style="float:left; margin-right: 1.5em;">
-		<label for="region_Western Victoria">W Victoria</label><br>
-        <input
-          type="number"
-          name="region_Western Victoria"
-          required min="0" max="1"/><br>
-        </div>
-		<br>
-        <br>
-		<br>
-        <br>
-        <br>
-		<br>
-		<div style="text-align:center;">
-			<button type="submit" class="btn btn-primary btn-block btn-large"><b>Submit</b></button>
-		</div>
-    </form>
-	<br>
-	<div class="result" align="center">
-		
+    <br />
+    <br />
+    <br />
+    <div align ="center">
+      <input type="submit" style="height: 30px; width: 300px" />
+    </div>
+    <br /><br />
+  </form>
+    <br /><br />
+    	<div class="result" align ="center">
 		<p style="padding: 0.5%"><b>{{ prediction_text }}</b></p>
+   
+    <br />
+    <br />
     
-    <br>
-        <br>
-		<br>
-        <br>
-        <br>
-		<br>
-        <div class="row" style='width:100%; font-size:20px; background:#4169E1;' >Thanks for your visit</div>
-
-    <div class="footer">  
-      @Copyright 2021- All Right Reserved.   
-</div>
-
-	</div>
- </div>
-
-
+    <!--p style="font-size: 50px">{{ result }}</p-->
+  </div>
 </body>
 </html>
