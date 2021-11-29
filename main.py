@@ -1,8 +1,5 @@
 
 # import dependencies
-
-from flask import Flask, request, jsonify, render_template
-import pickle
 import warnings
 import numpy as np
 import pandas as pd
@@ -11,22 +8,19 @@ from datetime import datetime as dt
 import matplotlib.pyplot as plt
 from scipy import stats
 from scipy.stats import norm, skew
-#from geopy.geocoders import Nominatim
-get_ipython().run_line_magic('matplotlib', 'inline')
-
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error as mse
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn.model_selection import train_test_split, RandomizedSearchCV
 from sklearn.preprocessing import StandardScaler
-
-import matplotlib.gridspec as gridspec
+from sklearn.preprocessing import LabelEncoder
 import matplotlib as mpl
-#from __future__ import print_function
+from __future__ import print_function
 warnings.filterwarnings("ignore")
 import psycopg2
 from sqlalchemy import create_engine
+from sklearn.metrics import accuracy_score, confusion_matrix
 import warnings
 
 # import datat set
@@ -222,6 +216,25 @@ conn.close()
 housing_df
 
 
+
+### encoding
+encode = LabelEncoder().fit(housing_df['type'])
+carpet = {x: i for i, x in enumerate(encode.classes_)}
+carpet
+
+encoder = LabelEncoder().fit(housing_df['region'])
+carp = {x: i for i, x in enumerate(encoder.classes_)}
+carp
+
+# convert to numerical variable 
+housing_df['type'] = LabelEncoder().fit_transform(housing_df['type'])
+housing_df['type']
+
+housing_df['region'] = LabelEncoder().fit_transform(housing_df['region'])
+housing_df['region']
+
+
+
 ## Convert categorical data to numeric and separate target feature for training data
 X = housing_df.drop(["logprice", 'price'],  axis = 1)
 
@@ -229,9 +242,6 @@ y = housing_df['price']
 
 X
 
-#X.columns
-X = pd.get_dummies(X, drop_first=True)
-X
 
 # split data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
