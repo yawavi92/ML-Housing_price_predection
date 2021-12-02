@@ -1,13 +1,13 @@
 # Housing Price Prediction:
 
-![alt text](GENERIC PICTURE LINK HERE)
+![alt text](https://github.com/yawavi92/Project4_Housing_price_predection/blob/main/static/images/melbourne_houses.jpg)
 
 ## Reason for our project:
 For the average consumer, finding appropriate housing within a set budget can be a daunting task. Predicting housing prices are expected to help people who plan to buy a house so they can know the price range in the future and be able to plan their finances. Housing price predictions are also beneficial for property investors to know the trend of housing prices in a certain location.
 
 The dataset used to build our models comes from a kaggle data set that included housing information from Melbourne, Australia from September 2017 to September 2019. The initial csv file included information such as address, the amount of rooms and bathrooms and car spaces among other data. From the dataset provided, we chose to clean our data to focus on the important features to be used within our machine learning models to determine which would give us the best predicted housing price. 
 
-__Click here to view site:__ [Melbourne, Australia Housing Price Prediction](HEROKU DEPLOYMENT LINK HERE)
+__Click here to view site:__ [Melbourne, Australia Housing Price Prediction](https://melbourne-housing.herokuapp.com/)
 
 ## Technologies:	
 - Jupyter Notebook
@@ -36,8 +36,8 @@ __Click here to view site:__ [Melbourne, Australia Housing Price Prediction](HER
 10. Visualize dashboard in Heroku
 
 ## Going Forward:
-- 
-- ​
+- Visualize data to show housing price trends on a map through an application such as Tableau
+- ​Scrape more recent data and see if the trends and predictions hold true
 - 
 
 ## Data Sources:
@@ -46,7 +46,7 @@ This is a house prices dataset for Melbourne, Australia from September 2017 to S
 - [Kaggle: Melbourne Housing Market](https://www.kaggle.com/anthonypino/melbourne-housing-market)
 
 ## Best model: 
-![Decision Tree](DECISION TREE MODEL PICTURE LINK)
+![Decision Tree](https://github.com/yawavi92/Project4_Housing_price_predection/blob/main/static/images/Decision_Tree_Model.png)
 
 ## Contributors:
 
