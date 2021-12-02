@@ -1,9 +1,9 @@
-# Housing Price Prediction: :house_with_garden:
+# Housing Price Prediction
 [Melbourne, Australia Housing Price Prediction](https://melbourne-housing.herokuapp.com/)
 
 ![Houses Picture](static/images/melbourne_houses.jpg)
 
-## Table of Contents
+## Table of Contents: :house_with_garden:
 01. [Reason For Our Project](#reason)
 02. [Data Source](#source)
 03. [Technologies](#tech)
@@ -62,25 +62,25 @@ This is a house prices dataset for Melbourne, Australia from September 2017 to S
 
 <a name="etl"></a>
 ## Extract, Transform, Load: :magic_wand:
-The data was provided to us in a CSV. We checked to verify the datatypes, dropped any columns we didn't need and, renamed the columns we kept. We also checked for any null values in the dataset and dropped them. Once our data checked out, we made sure not to have any duplicate data values. From there, we plot a heatmap to determine which features are important to our target feature and drop those we don't need.
+The data was provided to us in a CSV. We checked to verify the datatypes, dropped any columns we didn't need and renamed some of the columns we kept. We also checked for any null values in the dataset and dropped them. Once our data checked out, we made sure not to have any duplicate data values. From there, we plot a heatmap to determine which features are important to our target feature and drop those we don't need.
 
 ![ETL01](static/images/etl_01.png)
 ![ETL02](static/images/etl_02.png)
-![Heatmap]((static/images/features_heatmap.png)
+![Heatmap](static/images/features_heatmap.png)
 
 <a name="eda"></a>
 ## Exploratory Data Analysis: :mag::bar_chart:
-As we've guaranteed our data to be cleaned, we proceeded to our data exploration. We used Matplotlib and Seaborn to do visualizations and visualized many different aspects of our data to see how it reads.
+After being satisfied with our cleaned data, we proceeded to our data exploration. We used Matplotlib and Seaborn to do visualizations and visualized many different aspects of our data to see how it reads.
 
 ![Normalization](static/images/price_normalizing.png)
 
-We normalized our target feature to get a better outcome on our predictions
+We normalized our target feature to get a better outcome on our predictions.
 
 ![Price_Bathroom](static/images/price_bathroom_relationship.png)
 ![Price_Bedroom](static/images/price_bedroom_relationship.png)
 ![Price_Bedroom_Bathroom](static/images/price_bedroom_bathroom_relationship.png)
 
-We checked the relationship of price with bedrooms and bathrooms
+We checked the relationship of price with bedrooms and bathrooms.
 
 <a name="regression"></a>
 ## Regression Models Results: :nerd_face:
