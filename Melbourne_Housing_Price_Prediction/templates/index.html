@@ -87,9 +87,10 @@
 <body>
   <div class="header">
     <h2>House Prices Prediction</h2>
+    <h4>Fill out the form to get your future house price</h4>
   </div>
 
-    <br /><br />
+    
     <label
       >Rooms
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -102,7 +103,7 @@
       >Bathroom
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </label>
-    <input name="bathroom" type="number" required step="1" min="1" max="7" />
+    <input name="bathroom" type="number" required step="0.5" min="1" max="5" />
     <br /><br />
 
     <label
@@ -122,6 +123,7 @@
     <div style="float:left; margin-right: 1.5em;">
 	<label for="car">Type of housing</label><br>
     <select name="Type of housing" id="text" required>
+              <option value="3"></option>
               <option value="0">House</option>
               <option value="1">Townhouse</option>
               <option value="2">Unit or Duplex</option>
@@ -131,6 +133,7 @@
         <div style="float:left; margin-right: 1.5em;">
         <label for="Region">Region</label><br>
         <select name="Region" id="text" required>
+             <option value="8"></option>
               <option value="0">E Metropolitan</option>
               <option value="1">E Victoria</option>
               <option value="2">N Metropolitan</option>
