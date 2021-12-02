@@ -1,14 +1,32 @@
 # Housing Price Prediction: :house_with_garden:
+[Melbourne, Australia Housing Price Prediction](https://melbourne-housing.herokuapp.com/)
 
-![alt text](https://github.com/yawavi92/Project4_Housing_price_predection/blob/main/static/images/melbourne_houses.jpg)
+![Houses Picture](static/images/melbourne_houses.jpg)
 
+## Table of Contents
+01. [Reason for our project](#reason)
+02. [Data Source](#source)
+03. [Technologies](#tech)
+04. [Approach](#approach)
+05. [Extract, Transform, Load](#etl)
+06. [Exploratory Data Analysis](#eda)
+07. [Regression Model Results](#models)
+08. [Best model](#model)
+09. [The Website](#site)
+10. [Going Forward](#forward)
+11. [Contributors](#team)
+
+<a name="reason"></a>
 ## Reason for our project: :thinking:
 For the average consumer, finding appropriate housing within a set budget can be a daunting task. Predicting housing prices are expected to help people who plan to buy a house so they can know the price range in the future and be able to plan their finances. Housing price predictions are also beneficial for property investors to know the trend of housing prices in a certain location.
 
-The dataset used to build our models comes from a kaggle data set that included housing information from Melbourne, Australia from September 2017 to September 2019. The initial csv file included information such as address, the amount of rooms and bathrooms and car spaces among other data. From the dataset provided, we chose to clean our data to focus on the important features to be used within our machine learning models to determine which would give us the best predicted housing price. 
+<a name="source"></a>
+## Data Sources: :books:
+This is a house prices dataset for Melbourne, Australia from September 2017 to September 2019. This data was scraped from publicly available results posted every week from Domain.com.au. The dataset includes address, type of real estate, suburb, method of selling, rooms, price, real estate agent, date of sale, property size, land size, council area and distance from the Central Business District. From the dataset provided, we chose to clean our data to focus on the important features to be used within our machine learning models to determine which would give us the best predicted housing price.
 
-__Click here to view site:__ [Melbourne, Australia Housing Price Prediction](https://melbourne-housing.herokuapp.com/)
+- [Kaggle: Melbourne Housing Market](https://www.kaggle.com/anthonypino/melbourne-housing-market)
 
+<a name="tech"></a>
 ## Technologies: :building_construction::hammer_and_wrench:
 - Jupyter Notebook
 - Python
@@ -23,6 +41,7 @@ __Click here to view site:__ [Melbourne, Australia Housing Price Prediction](htt
 - HTML/CSS
 - Heroku
 
+<a name="approach"></a>
 ## Approach: :computer:
 01. Identify data source
 02. Collect and clean Melbourne, Australia housing data
@@ -35,19 +54,57 @@ __Click here to view site:__ [Melbourne, Australia Housing Price Prediction](htt
 09. Develope Flask application for model deployment
 10. Visualize dashboard in Heroku
 
+<a name="etl"></a>
+## Extract, Transform, and Load: :magic_wand:
+The data was provided to us in a CSV. We checked to verify the datatypes, dropped any columns we didn't need and, renamed the columns we kept. We also checked for any null values in the dataset and dropped them. Once our data checked out, we made sure not to have any duplicate data values.
+
+
+<a name="eda"></a>
+## Exploratory Data Analysis: :mag::bar_chart:
+As we've guaranteed our data to be cleaned, we proceeded to our data exploration. We used Matplotlib and Seaborn to do visualizations and visualized many different aspects of our data to see how it reads.
+
+![](static/images/price_normalizing.png)
+
+We normalized our target feature to get a better outcome on our predictions
+
+![Price_Bathroom](static/images/price_bathroom_relationship.png)
+![Price_Bedroom](static/images/price_bedroom_relationship.png)
+![Price_Bedroom_Bathroom](static/images/price_bedroom_bathroom_relationship.png)
+
+We checked the relationship of price with bedrooms and bathrooms
+
+<a name="regression"></a>
+## Regression Models Results: :nerd_face:
+
+![Linear_Regression](static/images/lr_model.png)
+
+![Random_Forest](static/images/rfr_model.png)
+
+![Decision_Tree](static/images/dtr_model.png)
+
+![Randomized_Search_CV](static/images/rscv_model.png)
+
+![Support_Vector_Regressor](static/images/svr_model.png)
+
+![Lasso](static/images/lasso_model.png)
+
+![Ridge](static/images/ridge_model.png)
+
+<a name="model"></a>
+## Best model: :trophy:
+![Decision Tree](static/images/Decision_Tree_Model.png)
+
+
+## The Website: :electron:
+![Website](static/images/melbourne_housing_website.png)
+
+<a name="forward"></a>
 ## Going Forward: :bulb:
 - Visualize data to show housing price trends on a map through an application such as Tableau
 - ​Scrape more recent data and see if the trends and predictions hold true
 - Update the look and feel of the website to make it more user friendly
 
-## Data Sources: :books:
-This is a house prices dataset for Melbourne, Australia from September 2017 to September 2019. This data was scraped from publicly available results posted every week from Domain.com.au. The dataset includes address, type of real estate, suburb, method of selling, rooms, price, real estate agent, date of sale, property size, land size, council area and distance from the Central Business District.
-
-- [Kaggle: Melbourne Housing Market](https://www.kaggle.com/anthonypino/melbourne-housing-market)
-
-## Best model: :trophy:
-![Decision Tree](https://github.com/yawavi92/Project4_Housing_price_predection/blob/main/static/images/Decision_Tree_Model.png)
-
+<a name="team"></a>
 ## Contributors: :brain:
 
 - [Marius Clark](https://github.com/Zone6Mars)
