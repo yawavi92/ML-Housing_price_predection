@@ -66,7 +66,7 @@ The data was provided to us in a CSV. We checked to verify the datatypes, droppe
 
 ![ETL01](static/images/etl_01.png)
 ![ETL02](static/images/etl_02.png)
-![Heatmap](static/images/features_heatmap.png)
+![Heatmap](static/images/features_heatmap.jpg)
 
 <a name="eda"></a>
 ## Exploratory Data Analysis: :mag::bar_chart:
@@ -76,9 +76,9 @@ After being satisfied with our cleaned data, we proceeded to our data exploratio
 
 We normalized our target feature to get a better outcome on our predictions.
 
-![Price_Bathroom](static/images/price_bathroom_relationship.png)
-![Price_Bedroom](static/images/price_bedroom_relationship.png)
-![Price_Bedroom_Bathroom](static/images/price_bedroom_bathroom_relationship.png)
+![Price_Bathroom](static/images/price_bathroom_relationship.jpg)
+![Price_Bedroom](static/images/price_bedroom_relationship.jpg)
+![Price_Bedroom_Bathroom](static/images/price_bedroom_bathroom_relationship.jpg)
 
 We checked the relationship of price with bedrooms and bathrooms.
 
