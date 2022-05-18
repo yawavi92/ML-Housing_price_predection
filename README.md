@@ -112,6 +112,6 @@ We checked the relationship of price with bedrooms and bathrooms.
 ## Contributors: :brain:
 
 - [Marius Clark](https://github.com/Zone6Mars)
-- [Darryl Connelly II](https://github.com/Connelito)
+- [Darryl Connelly II](https://github.com/DConnellyII)
 - [Yawavi Koudjonou](https://github.com/yawavi92)
 - [Kyungchul Oh](https://github.com/KCOH)
